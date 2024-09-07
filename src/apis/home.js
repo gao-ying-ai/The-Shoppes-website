@@ -19,3 +19,9 @@ export const findHotAPI = () => {
         url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/hot'
     })
 }
+// 获取产品列表模块
+export const getGoodsAPI = () => {
+    return httpInstance({
+        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/goods'
+    })
+}
