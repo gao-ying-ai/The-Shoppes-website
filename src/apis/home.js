@@ -13,3 +13,9 @@ export const findNewAPI = () => {
         url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/new'
     })
 }
+// 获取人气推荐模块
+export const findHotAPI = () => {
+    return httpInstance({
+        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/hot'
+    })
+}
