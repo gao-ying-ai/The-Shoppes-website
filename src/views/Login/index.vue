@@ -1,6 +1,11 @@
 <script setup>
-
+import { loginAPI } from '@/apis/user'
 import { ref } from 'vue';
+import { ElMessage } from 'element-plus'
+import 'element-plus/theme-chalk/el-message.css'
+import { useRouter } from 'vue-router';
+
+
 //表单校验功能（账户名，密码）
 const form = ref({
     account: '',
@@ -9,7 +14,7 @@ const form = ref({
 })
 //规则对象
 const rules = {
-    accout: [
+    account: [
         { required: true, message: '用户名不能为空', trigger: 'blur' }
     ],
     password: [
@@ -34,13 +39,23 @@ const rules = {
 }
 //获取form实例做统一校验
 const formRef = ref(null)
+const router = useRouter()
 const doLogin = () => {
+    const { account, password } = form.value
     //调用实例方法
-    formRef.value.validate((valid) => {
+    formRef.value.validate(async (valid) => {
         //valid表示所有表单都通过校验才为true
         console.log(valid);
         if (valid) {
             //todoLogin
+            const res = await loginAPI({ account, password })
+            console.log(res)
+            //提示用户
+            ElMessage({ type: 'success', message: '登陆成功' })
+            //跳到首页
+            router.replace({ path: '/' })
+
+
         }
 
     })
@@ -71,8 +86,8 @@ const doLogin = () => {
                     <div class="form">
                         <el-form ref="formRef" :model="form" :rules="rules" label-position="right" label-width="60px"
                             status-icon>
-                            <el-form-item prop="accout" label="账户">
-                                <el-input v-model="form.accout" />
+                            <el-form-item prop="account" label="账户">
+                                <el-input v-model="form.account" />
                             </el-form-item>
                             <el-form-item prop="password" label="密码">
                                 <el-input v-model="form.password" />
