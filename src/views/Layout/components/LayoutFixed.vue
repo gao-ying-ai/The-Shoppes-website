@@ -1,7 +1,7 @@
 <script setup>
 import { useScroll } from '@vueuse/core';
 import { useCategoryStore } from '@/stores/category';
-const y = useScroll(window)
+const { y } = useScroll(window)
 //使用pinia中的数据
 
 const categoryStore = useCategoryStore()
@@ -16,7 +16,7 @@ const categoryStore = useCategoryStore()
             <!-- 导航区域 -->
             <ul class="app-header-nav ">
                 <li class="home" v-for="item in categoryStore.getCategoryList" :key="item.id">
-                    <RouterLink to="/">{{ item.name }}</RouterLink>
+                    <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
                 </li>
             </ul>
 
