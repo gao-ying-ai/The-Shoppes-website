@@ -19,10 +19,10 @@ onMounted(() => categoryStore.getCategory())
 
     <LayoutFixed />
     <LayoutNav />
-
-
     <LayoutHeader />
     <!-- 二级路由出口 -->
+    <!-- 添加key破坏复用，强制销毁重建 -->
+    <!-- <router-view :key="$route.fullPath"></router-view> -->
     <router-view></router-view>
     <LayoutFooter />
 </template>
