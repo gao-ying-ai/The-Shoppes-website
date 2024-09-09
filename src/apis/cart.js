@@ -18,3 +18,14 @@ export const findNewCartListAPI = () => {
         url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/member/cart'
     })
 }
+
+//删除购物车
+export const delCartAPI = (ids) => {
+    return request({
+        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/member/cart',
+        method: 'DELETE',
+        data: {
+            ids
+        }
+    })
+}
