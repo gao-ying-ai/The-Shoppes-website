@@ -12,3 +12,12 @@ export const loginAPI = ({ account, password }) => {
     })
 
 }
+
+export const getLikeListAPI = ({ limit = 4 }) => {
+    return request({
+        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/goods/relevant',
+        params: {
+            limit
+        }
+    })
+}
