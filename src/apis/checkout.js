@@ -7,3 +7,14 @@ export const getCheckInfoAPI = () => {
 
     })
 }
+
+
+//订单
+export const creatOrderAPI = (data) => {
+    return request({
+        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/member/order',
+        method: 'POST',
+        data
+
+    })
+}
