@@ -3,7 +3,7 @@ import request from '@/utils/http'
 
 export const loginAPI = ({ account, password }) => {
     return request({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/login',
+        url: '/login',
         method: 'POST',
         data: {
             account,
@@ -15,7 +15,7 @@ export const loginAPI = ({ account, password }) => {
 
 export const getLikeListAPI = ({ limit = 4 }) => {
     return request({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/goods/relevant',
+        url: '/goods/relevant',
         params: {
             limit
         }

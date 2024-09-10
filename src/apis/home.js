@@ -5,7 +5,7 @@ export function getBannerAPI(params = {}) {
     const { distributionSite = '1' } = params
 
     return httpInstance({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/banner',
+        url: '/home/banner',
         params: {
             distributionSite
         }
@@ -15,18 +15,18 @@ export function getBannerAPI(params = {}) {
 // 获取新鲜好物
 export const findNewAPI = () => {
     return httpInstance({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/new'
+        url: '/home/new'
     })
 }
 // 获取人气推荐模块
 export const findHotAPI = () => {
     return httpInstance({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/hot'
+        url: '/home/hot'
     })
 }
 // 获取产品列表模块
 export const getGoodsAPI = () => {
     return httpInstance({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/home/goods'
+        url: '/home/goods'
     })
 }

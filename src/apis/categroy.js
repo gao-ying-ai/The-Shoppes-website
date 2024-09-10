@@ -2,7 +2,7 @@ import request from '@/utils/http'
 
 export function getCategoryAPI(id) {
     return request({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/category',
+        url: '/category',
         params: {
             id
         }
@@ -12,7 +12,7 @@ export function getCategoryAPI(id) {
 //二级分类列表接口
 export const getCategoryFilterAPI = (id) => {
     return request({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/category/sub/filter',
+        url: '/category/sub/filter',
         params: {
             id
         }
@@ -30,7 +30,7 @@ export const getCategoryFilterAPI = (id) => {
  */
 export const getSubCategoryAPI = (data) => {
     return request({
-        url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/category/goods/temporary',
+        url: '/category/goods/temporary',
         method: 'POST',
         data
     })
