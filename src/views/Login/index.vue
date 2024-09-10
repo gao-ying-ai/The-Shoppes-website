@@ -9,7 +9,7 @@ import { useUserStore } from '@/stores/userStore'
 const userStore = useUserStore()
 //表单校验功能（账户名，密码）
 const form = ref({
-    account: 'heima282',
+    account: 'heima289',
     password: 'hm#qd@23!',
     agree: true
 })
